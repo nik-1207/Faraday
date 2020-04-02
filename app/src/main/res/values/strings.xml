@@ -10,6 +10,4 @@
     <string name="setting_up_the_faraday">Setting up the Faraday</string>
     <string name="name">Name :</string>
     <string name="viewName">Enter Name</string>
-    <string name="speech_prompt" />
-    <string name="speech_not_supported">-5</string>
 </resources>
