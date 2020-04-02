@@ -1,64 +1,45 @@
 package com.ai.faraday;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.FileNotFoundException;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText text;
-    TextView view;
-    Button submitButton;
-    SettingUp user;
+
+    ReadAndWriteAppData user;
+    Intent login, voice;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-        view=findViewById(R.id.setting_up_faraday);
-        text=findViewById(R.id.getName);
-        submitButton=findViewById(R.id.submitButton);
-        user=new SettingUp();
-
-
-        submitButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-
-                if(!text.getText().toString().equals(""))
-                {
-                    Intent i = new Intent(getApplicationContext(), Activity_2.class);
-                    startActivity(i);
-                    setContentView(R.layout.activity_2);
-                }
-                view.setText(R.string.viewName);
-                user.setName(text.getText().toString());
-
-            }
-
-        });
+        user = new ReadAndWriteAppData();
+        login = new Intent(getApplicationContext(), Activity_login.class);
+        voice = new Intent(getApplicationContext(), voice_activity.class);
 
 
 
+        //checking existing user data
+        try {
+            user.readFileData(MainActivity.this);
+            //if user data exist go to voice Agent
 
+            startActivity(voice);
 
+        }
+        //if user data not found go to login page and register for new user
+        catch (FileNotFoundException e) {
+            startActivity(login);
 
-
-
-
-
-
-
-
+        }
 
 
     }
+
 }

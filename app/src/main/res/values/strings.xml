@@ -10,4 +10,6 @@
     <string name="setting_up_the_faraday">Setting up the Faraday</string>
     <string name="name">Name :</string>
     <string name="viewName">Enter Name</string>
+    <string name="register">Register</string>
+    <string name="setText">listening....</string>
 </resources>
