@@ -14,11 +14,6 @@ class Permissions
         GRANT_CODE =1;
     }
 
-    public int getGRANT_CODE()
-    {
-        return GRANT_CODE;
-    }
-
     boolean hasPermissions(Context context, String... permissions) {
         if (context != null && permissions != null) {
             for (String permission : permissions) {
