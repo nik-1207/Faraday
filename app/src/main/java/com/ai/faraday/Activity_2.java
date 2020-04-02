@@ -1,9 +1,11 @@
 package com.ai.faraday;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.Manifest;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class Activity_2 extends AppCompatActivity
@@ -22,8 +24,8 @@ public class Activity_2 extends AppCompatActivity
         {
             @Override
             public void onClick(View v) {
-                if (!permission.hasPermissions(Activity_2.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)) {
-                    permission.grantPermission(Activity_2.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO);
+                if (!permission.hasPermissions(Activity_2.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO, Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                    permission.grantPermission(Activity_2.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO, Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE);
                 }
                
             }
