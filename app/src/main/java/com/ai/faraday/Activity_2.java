@@ -32,11 +32,8 @@ public class Activity_2 extends AppCompatActivity {
                     permission.grantPermission(Activity_2.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO);
                 }
                 Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-                /*
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,Locale.getDefault());
-                intent.putExtra(RecognizerIntent.EXTRA_PROMPT,getString(R.string.speech_prompt));
-                */
+
+
 
                 try {
                     startActivityForResult(intent,permission.getGRANT_CODE());
