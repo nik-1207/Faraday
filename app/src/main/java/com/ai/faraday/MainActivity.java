@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             user.readFileData(MainActivity.this);
             //if user data exist go to voice Agent
-
             startActivity(voice);
 
         }
@@ -38,5 +37,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(login);
 
         }
+        finish();
     }
 }

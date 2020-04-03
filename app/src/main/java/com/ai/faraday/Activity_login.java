@@ -32,10 +32,12 @@ public class Activity_login extends AppCompatActivity {
                     //if block is not empty then save the data for new user i.e name and go to main activity
                     user.writeFileData(Activity_login.this, username.getText().toString());
                     startActivity(main);
-                    //setContentView(R.layout.activity_main);
+                    finish();
+
                 }
 
             }
         });
+
     }
 }
