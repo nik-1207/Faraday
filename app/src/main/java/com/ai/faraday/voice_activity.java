@@ -12,12 +12,13 @@ public class voice_activity extends AppCompatActivity {
     Button speak;
     Permissions permission;
     TextView text;
-    boolean flag;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voice);
+
         speak = findViewById(R.id.button2);
         permission = new Permissions();
         text = findViewById(R.id.textView);
@@ -35,6 +36,12 @@ public class voice_activity extends AppCompatActivity {
                     text.setText("listening...");
                 }
             }
+
         });
+
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }
